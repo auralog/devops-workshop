@@ -6,6 +6,7 @@ resource "aws_instance" "test" {
   ami           = "ami-0953476d60561c955"
   instance_type = "t2.micro"
   key_name      = "Auralogltd"
+  aws_security_group = [ "ssh-sg"]
   tags          = {
     Name = "HelloDevops"
   }
@@ -14,7 +15,9 @@ resource "aws_instance" "test" {
 resource "aws_security_group" "ssh-sg" {
  name        = "ssh-sg"
  description = "allows ssh access to the test server"
- 
+ tags          = {
+    Name = "ssh-sg"
+  }
 
 ingress {
    description = "SSH ingress"
