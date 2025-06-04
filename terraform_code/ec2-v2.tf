@@ -11,8 +11,8 @@ resource "aws_instance" "test" {
   }
 }
 
-resource "aws_security_group" "SSH Access" {
- name        = "SSH Access"
+resource "aws_security_group" "ssh-sg" {
+ name        = "ssh-sg"
  description = "allows ssh access to the test server"
  
 
